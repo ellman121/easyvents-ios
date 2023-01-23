@@ -1,0 +1,586 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D5C292C8297EBE6400CC22C8 /* easyvents_iosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C292C7297EBE6400CC22C8 /* easyvents_iosApp.swift */; };
+		D5C292CA297EBE6400CC22C8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C292C9297EBE6400CC22C8 /* ContentView.swift */; };
+		D5C292CC297EBE6700CC22C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5C292CB297EBE6700CC22C8 /* Assets.xcassets */; };
+		D5C292CF297EBE6700CC22C8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5C292CE297EBE6700CC22C8 /* Preview Assets.xcassets */; };
+		D5C292D9297EBE6700CC22C8 /* easyvents_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C292D8297EBE6700CC22C8 /* easyvents_iosTests.swift */; };
+		D5C292E3297EBE6700CC22C8 /* easyvents_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C292E2297EBE6700CC22C8 /* easyvents_iosUITests.swift */; };
+		D5C292E5297EBE6700CC22C8 /* easyvents_iosUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C292E4297EBE6700CC22C8 /* easyvents_iosUITestsLaunchTests.swift */; };
+		D5C292F2297EBF2600CC22C8 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C292F1297EBF2600CC22C8 /* Event.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D5C292D5297EBE6700CC22C8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D5C292BC297EBE6400CC22C8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D5C292C3297EBE6400CC22C8;
+			remoteInfo = "easyvents-ios";
+		};
+		D5C292DF297EBE6700CC22C8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D5C292BC297EBE6400CC22C8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D5C292C3297EBE6400CC22C8;
+			remoteInfo = "easyvents-ios";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D5C292C4297EBE6400CC22C8 /* easyvents-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "easyvents-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5C292C7297EBE6400CC22C8 /* easyvents_iosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = easyvents_iosApp.swift; sourceTree = "<group>"; };
+		D5C292C9297EBE6400CC22C8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D5C292CB297EBE6700CC22C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D5C292CE297EBE6700CC22C8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D5C292D4297EBE6700CC22C8 /* easyvents-iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "easyvents-iosTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5C292D8297EBE6700CC22C8 /* easyvents_iosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = easyvents_iosTests.swift; sourceTree = "<group>"; };
+		D5C292DE297EBE6700CC22C8 /* easyvents-iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "easyvents-iosUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5C292E2297EBE6700CC22C8 /* easyvents_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = easyvents_iosUITests.swift; sourceTree = "<group>"; };
+		D5C292E4297EBE6700CC22C8 /* easyvents_iosUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = easyvents_iosUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D5C292F1297EBF2600CC22C8 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Event.swift; path = models/Event.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D5C292C1297EBE6400CC22C8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5C292D1297EBE6700CC22C8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5C292DB297EBE6700CC22C8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D5C292BB297EBE6400CC22C8 = {
+			isa = PBXGroup;
+			children = (
+				D5C292C6297EBE6400CC22C8 /* easyvents-ios */,
+				D5C292D7297EBE6700CC22C8 /* easyvents-iosTests */,
+				D5C292E1297EBE6700CC22C8 /* easyvents-iosUITests */,
+				D5C292C5297EBE6400CC22C8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D5C292C5297EBE6400CC22C8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D5C292C4297EBE6400CC22C8 /* easyvents-ios.app */,
+				D5C292D4297EBE6700CC22C8 /* easyvents-iosTests.xctest */,
+				D5C292DE297EBE6700CC22C8 /* easyvents-iosUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D5C292C6297EBE6400CC22C8 /* easyvents-ios */ = {
+			isa = PBXGroup;
+			children = (
+				D5C292C7297EBE6400CC22C8 /* easyvents_iosApp.swift */,
+				D5C292C9297EBE6400CC22C8 /* ContentView.swift */,
+				D5C292F1297EBF2600CC22C8 /* Event.swift */,
+				D5C292CB297EBE6700CC22C8 /* Assets.xcassets */,
+				D5C292CD297EBE6700CC22C8 /* Preview Content */,
+			);
+			path = "easyvents-ios";
+			sourceTree = "<group>";
+		};
+		D5C292CD297EBE6700CC22C8 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				D5C292CE297EBE6700CC22C8 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D5C292D7297EBE6700CC22C8 /* easyvents-iosTests */ = {
+			isa = PBXGroup;
+			children = (
+				D5C292D8297EBE6700CC22C8 /* easyvents_iosTests.swift */,
+			);
+			path = "easyvents-iosTests";
+			sourceTree = "<group>";
+		};
+		D5C292E1297EBE6700CC22C8 /* easyvents-iosUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D5C292E2297EBE6700CC22C8 /* easyvents_iosUITests.swift */,
+				D5C292E4297EBE6700CC22C8 /* easyvents_iosUITestsLaunchTests.swift */,
+			);
+			path = "easyvents-iosUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D5C292C3297EBE6400CC22C8 /* easyvents-ios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D5C292E8297EBE6700CC22C8 /* Build configuration list for PBXNativeTarget "easyvents-ios" */;
+			buildPhases = (
+				D5C292C0297EBE6400CC22C8 /* Sources */,
+				D5C292C1297EBE6400CC22C8 /* Frameworks */,
+				D5C292C2297EBE6400CC22C8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "easyvents-ios";
+			productName = "easyvents-ios";
+			productReference = D5C292C4297EBE6400CC22C8 /* easyvents-ios.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D5C292D3297EBE6700CC22C8 /* easyvents-iosTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D5C292EB297EBE6700CC22C8 /* Build configuration list for PBXNativeTarget "easyvents-iosTests" */;
+			buildPhases = (
+				D5C292D0297EBE6700CC22C8 /* Sources */,
+				D5C292D1297EBE6700CC22C8 /* Frameworks */,
+				D5C292D2297EBE6700CC22C8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D5C292D6297EBE6700CC22C8 /* PBXTargetDependency */,
+			);
+			name = "easyvents-iosTests";
+			productName = "easyvents-iosTests";
+			productReference = D5C292D4297EBE6700CC22C8 /* easyvents-iosTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D5C292DD297EBE6700CC22C8 /* easyvents-iosUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D5C292EE297EBE6700CC22C8 /* Build configuration list for PBXNativeTarget "easyvents-iosUITests" */;
+			buildPhases = (
+				D5C292DA297EBE6700CC22C8 /* Sources */,
+				D5C292DB297EBE6700CC22C8 /* Frameworks */,
+				D5C292DC297EBE6700CC22C8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D5C292E0297EBE6700CC22C8 /* PBXTargetDependency */,
+			);
+			name = "easyvents-iosUITests";
+			productName = "easyvents-iosUITests";
+			productReference = D5C292DE297EBE6700CC22C8 /* easyvents-iosUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D5C292BC297EBE6400CC22C8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					D5C292C3297EBE6400CC22C8 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					D5C292D3297EBE6700CC22C8 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = D5C292C3297EBE6400CC22C8;
+					};
+					D5C292DD297EBE6700CC22C8 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = D5C292C3297EBE6400CC22C8;
+					};
+				};
+			};
+			buildConfigurationList = D5C292BF297EBE6400CC22C8 /* Build configuration list for PBXProject "easyvents-ios" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D5C292BB297EBE6400CC22C8;
+			productRefGroup = D5C292C5297EBE6400CC22C8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D5C292C3297EBE6400CC22C8 /* easyvents-ios */,
+				D5C292D3297EBE6700CC22C8 /* easyvents-iosTests */,
+				D5C292DD297EBE6700CC22C8 /* easyvents-iosUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D5C292C2297EBE6400CC22C8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5C292CF297EBE6700CC22C8 /* Preview Assets.xcassets in Resources */,
+				D5C292CC297EBE6700CC22C8 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5C292D2297EBE6700CC22C8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5C292DC297EBE6700CC22C8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D5C292C0297EBE6400CC22C8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5C292CA297EBE6400CC22C8 /* ContentView.swift in Sources */,
+				D5C292F2297EBF2600CC22C8 /* Event.swift in Sources */,
+				D5C292C8297EBE6400CC22C8 /* easyvents_iosApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5C292D0297EBE6700CC22C8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5C292D9297EBE6700CC22C8 /* easyvents_iosTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5C292DA297EBE6700CC22C8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5C292E3297EBE6700CC22C8 /* easyvents_iosUITests.swift in Sources */,
+				D5C292E5297EBE6700CC22C8 /* easyvents_iosUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D5C292D6297EBE6700CC22C8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D5C292C3297EBE6400CC22C8 /* easyvents-ios */;
+			targetProxy = D5C292D5297EBE6700CC22C8 /* PBXContainerItemProxy */;
+		};
+		D5C292E0297EBE6700CC22C8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D5C292C3297EBE6400CC22C8 /* easyvents-ios */;
+			targetProxy = D5C292DF297EBE6700CC22C8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		D5C292E6297EBE6700CC22C8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D5C292E7297EBE6700CC22C8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D5C292E9297EBE6700CC22C8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"easyvents-ios/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "me.elliottrarden.easyvents-ios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D5C292EA297EBE6700CC22C8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"easyvents-ios/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "me.elliottrarden.easyvents-ios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D5C292EC297EBE6700CC22C8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "me.elliottrarden.easyvents-iosTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/easyvents-ios.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/easyvents-ios";
+			};
+			name = Debug;
+		};
+		D5C292ED297EBE6700CC22C8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "me.elliottrarden.easyvents-iosTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/easyvents-ios.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/easyvents-ios";
+			};
+			name = Release;
+		};
+		D5C292EF297EBE6700CC22C8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "me.elliottrarden.easyvents-iosUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "easyvents-ios";
+			};
+			name = Debug;
+		};
+		D5C292F0297EBE6700CC22C8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "me.elliottrarden.easyvents-iosUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "easyvents-ios";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D5C292BF297EBE6400CC22C8 /* Build configuration list for PBXProject "easyvents-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5C292E6297EBE6700CC22C8 /* Debug */,
+				D5C292E7297EBE6700CC22C8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D5C292E8297EBE6700CC22C8 /* Build configuration list for PBXNativeTarget "easyvents-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5C292E9297EBE6700CC22C8 /* Debug */,
+				D5C292EA297EBE6700CC22C8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D5C292EB297EBE6700CC22C8 /* Build configuration list for PBXNativeTarget "easyvents-iosTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5C292EC297EBE6700CC22C8 /* Debug */,
+				D5C292ED297EBE6700CC22C8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D5C292EE297EBE6700CC22C8 /* Build configuration list for PBXNativeTarget "easyvents-iosUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5C292EF297EBE6700CC22C8 /* Debug */,
+				D5C292F0297EBE6700CC22C8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D5C292BC297EBE6400CC22C8 /* Project object */;
+}
