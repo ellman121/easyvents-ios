@@ -8,13 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		D5C292C8297EBE6400CC22C8 /* easyvents_iosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C292C7297EBE6400CC22C8 /* easyvents_iosApp.swift */; };
-		D5C292CA297EBE6400CC22C8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C292C9297EBE6400CC22C8 /* ContentView.swift */; };
 		D5C292CC297EBE6700CC22C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5C292CB297EBE6700CC22C8 /* Assets.xcassets */; };
 		D5C292CF297EBE6700CC22C8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5C292CE297EBE6700CC22C8 /* Preview Assets.xcassets */; };
 		D5C292D9297EBE6700CC22C8 /* easyvents_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C292D8297EBE6700CC22C8 /* easyvents_iosTests.swift */; };
 		D5C292E3297EBE6700CC22C8 /* easyvents_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C292E2297EBE6700CC22C8 /* easyvents_iosUITests.swift */; };
 		D5C292E5297EBE6700CC22C8 /* easyvents_iosUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C292E4297EBE6700CC22C8 /* easyvents_iosUITestsLaunchTests.swift */; };
-		D5C292F2297EBF2600CC22C8 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C292F1297EBF2600CC22C8 /* Event.swift */; };
+		D5C292F6298167A100CC22C8 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C292F5298167A100CC22C8 /* Event.swift */; };
+		D5C292FA2981682F00CC22C8 /* EventRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C292F92981682F00CC22C8 /* EventRow.swift */; };
+		D5C292FC29816D4700CC22C8 /* EventsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C292FB29816D4700CC22C8 /* EventsList.swift */; };
+		D5C292FE29816F9A00CC22C8 /* EventDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C292FD29816F9A00CC22C8 /* EventDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +39,6 @@
 /* Begin PBXFileReference section */
 		D5C292C4297EBE6400CC22C8 /* easyvents-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "easyvents-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5C292C7297EBE6400CC22C8 /* easyvents_iosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = easyvents_iosApp.swift; sourceTree = "<group>"; };
-		D5C292C9297EBE6400CC22C8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D5C292CB297EBE6700CC22C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D5C292CE297EBE6700CC22C8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D5C292D4297EBE6700CC22C8 /* easyvents-iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "easyvents-iosTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,7 +46,10 @@
 		D5C292DE297EBE6700CC22C8 /* easyvents-iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "easyvents-iosUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5C292E2297EBE6700CC22C8 /* easyvents_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = easyvents_iosUITests.swift; sourceTree = "<group>"; };
 		D5C292E4297EBE6700CC22C8 /* easyvents_iosUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = easyvents_iosUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		D5C292F1297EBF2600CC22C8 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Event.swift; path = models/Event.swift; sourceTree = "<group>"; };
+		D5C292F5298167A100CC22C8 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		D5C292F92981682F00CC22C8 /* EventRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventRow.swift; sourceTree = "<group>"; };
+		D5C292FB29816D4700CC22C8 /* EventsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsList.swift; sourceTree = "<group>"; };
+		D5C292FD29816F9A00CC22C8 /* EventDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,10 +100,11 @@
 		D5C292C6297EBE6400CC22C8 /* easyvents-ios */ = {
 			isa = PBXGroup;
 			children = (
-				D5C292C7297EBE6400CC22C8 /* easyvents_iosApp.swift */,
-				D5C292C9297EBE6400CC22C8 /* ContentView.swift */,
-				D5C292F1297EBF2600CC22C8 /* Event.swift */,
 				D5C292CB297EBE6700CC22C8 /* Assets.xcassets */,
+				D5C292C7297EBE6400CC22C8 /* easyvents_iosApp.swift */,
+				D5C292F8298167BC00CC22C8 /* Components */,
+				D5C292F7298167AC00CC22C8 /* Screens */,
+				D5C292F42981679500CC22C8 /* Models */,
 				D5C292CD297EBE6700CC22C8 /* Preview Content */,
 			);
 			path = "easyvents-ios";
@@ -128,6 +133,31 @@
 				D5C292E4297EBE6700CC22C8 /* easyvents_iosUITestsLaunchTests.swift */,
 			);
 			path = "easyvents-iosUITests";
+			sourceTree = "<group>";
+		};
+		D5C292F42981679500CC22C8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D5C292F5298167A100CC22C8 /* Event.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D5C292F7298167AC00CC22C8 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				D5C292FB29816D4700CC22C8 /* EventsList.swift */,
+				D5C292FD29816F9A00CC22C8 /* EventDetail.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		D5C292F8298167BC00CC22C8 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				D5C292F92981682F00CC22C8 /* EventRow.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,9 +290,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D5C292CA297EBE6400CC22C8 /* ContentView.swift in Sources */,
-				D5C292F2297EBF2600CC22C8 /* Event.swift in Sources */,
+				D5C292FC29816D4700CC22C8 /* EventsList.swift in Sources */,
+				D5C292F6298167A100CC22C8 /* Event.swift in Sources */,
 				D5C292C8297EBE6400CC22C8 /* easyvents_iosApp.swift in Sources */,
+				D5C292FE29816F9A00CC22C8 /* EventDetail.swift in Sources */,
+				D5C292FA2981682F00CC22C8 /* EventRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
