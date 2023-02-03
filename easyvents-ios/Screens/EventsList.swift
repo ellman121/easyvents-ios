@@ -28,11 +28,19 @@ struct EventsList: View {
             }
             .navigationTitle("Events")
             .toolbar {
-                Button("Log Out") {
-                    do {
-                        try Auth.auth().signOut()
-                    } catch {
-                        
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button("Log Out") {
+                        do {
+                            try Auth.auth().signOut()
+                        } catch {
+                            
+                        }
+                    }
+                }
+
+                ToolbarItem(placement: .primaryAction) {
+                    Button("New Event") {
+                        print("hello")
                     }
                 }
             }
