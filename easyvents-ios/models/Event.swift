@@ -29,22 +29,19 @@ class EventsViewModel: ObservableObject {
             .whereField("createdBy", isEqualTo: uid)
             .addSnapshotListener { querySnapshot, error in
                 guard let documents = querySnapshot?.documents else {
-                    print("No events found")
+                    print("ERROR: no events found for user")
                     return
                 }
                 
-                print("docs")
-                print(documents)
                 let events = documents.map { docSnapshot -> Event in
                     do {
                         return try docSnapshot.data(as: Event.self)
                     } catch {
+                        print("ERROR: Couldn't parse doc snapshot into Event")
                         print(error)
                     }
                     return Event(name: "fake", startTime: Date(timeIntervalSince1970: 0), endTime: nil, description: "fake")
                 }
-                print("events after map")
-                print(events)
                 self.events = events
             }
     }
