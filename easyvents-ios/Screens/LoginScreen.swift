@@ -33,6 +33,14 @@ struct LoginScreen: View {
             GIDSignIn.sharedInstance.configuration = GIDConfiguration(clientID: clientID)
             GIDSignIn.sharedInstance.signIn(withPresenting: rvc, completion: signInToFirebaseGoogle)
         }.padding()
+        Button("Log Out") {
+            GIDSignIn.sharedInstance.signOut()
+            do {
+                try Auth.auth().signOut()
+            } catch {
+                
+            }
+        }
         
     }
 }

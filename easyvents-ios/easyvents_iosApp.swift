@@ -6,16 +6,12 @@
 //
 
 import SwiftUI
+import FirebaseAuth
 import FirebaseCore
 import GoogleSignIn
 import GoogleSignInSwift
 
 class AppDelegate: NSObject, UIApplicationDelegate {
-    func application(_ application:UIApplication, didFinishLaunchingWithOptions launchOptions:[UIApplication.LaunchOptionsKey:Any]? = nil) -> Bool {
-        FirebaseApp.configure()
-        return true
-    }
-    
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         return GIDSignIn.sharedInstance.handle(url)
     }
@@ -35,16 +31,37 @@ extension UIApplication {
 @main
 struct easyvents_iosApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    @State var isLoggedIn = false
+    
+    init() {
+        FirebaseApp.configure()
+        isLoggedIn = Auth.auth().currentUser != nil
+    }
     
     var body: some Scene {
         WindowGroup {
-            LoginScreen()
-                .onOpenURL { url in
-                    GIDSignIn.sharedInstance.handle(url)
-                }
-                .onAppear {
-                    GIDSignIn.sharedInstance.restorePreviousSignIn()
-                }
+            if (isLoggedIn) {
+                EventsList()
+                    .onAppear {
+                        Auth.auth().addStateDidChangeListener { auth, _ in
+                            if auth.currentUser == nil {
+                                isLoggedIn = false
+                            }
+                        }
+                    }
+            } else {
+                LoginScreen()
+                    .onOpenURL { url in
+                        GIDSignIn.sharedInstance.handle(url)
+                    }
+                    .onAppear {
+                        Auth.auth().addStateDidChangeListener { auth, _ in
+                            if auth.currentUser != nil {
+                                isLoggedIn = true
+                            }
+                        }
+                    }
+            }
         }
     }
 }

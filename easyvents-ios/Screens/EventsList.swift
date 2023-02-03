@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import FirebaseAuth
 
 let events = [
     Event(id: "Event ID 1", name: "Event Name 1", startTime: Date(timeIntervalSince1970: 123456789), description: "Some event description"),
@@ -23,6 +24,15 @@ struct EventsList: View {
                     EventRow(event: event)
                 }
             }.navigationTitle("Events")
+                .toolbar {
+                    Button("Log Out") {
+                        do {
+                            try Auth.auth().signOut()
+                        } catch {
+                            
+                        }
+                    }
+                }
         }
     }
 }
