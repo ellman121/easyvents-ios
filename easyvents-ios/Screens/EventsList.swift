@@ -15,24 +15,30 @@ let events = [
 ]
 
 struct EventsList: View {
+    @ObservedObject var eventModel = EventsViewModel()
+    
     var body: some View {
         NavigationView {
-            List(events) { event in
+            List(eventModel.events) { event in
                 NavigationLink {
                     EventDetail(event: event)
                 } label: {
                     EventRow(event: event)
                 }
-            }.navigationTitle("Events")
-                .toolbar {
-                    Button("Log Out") {
-                        do {
-                            try Auth.auth().signOut()
-                        } catch {
-                            
-                        }
+            }
+            .navigationTitle("Events")
+            .toolbar {
+                Button("Log Out") {
+                    do {
+                        try Auth.auth().signOut()
+                    } catch {
+                        
                     }
                 }
+            }
+        }
+        .onAppear() {
+            self.eventModel.fetchEvents()
         }
     }
 }

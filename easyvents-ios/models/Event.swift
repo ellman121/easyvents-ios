@@ -6,27 +6,46 @@
 //
 
 import Foundation
+import FirebaseAuth
+import FirebaseFirestore
+import FirebaseFirestoreSwift
 
-struct Event: Hashable, Codable, Identifiable {
-    var id: String
+struct Event: Identifiable, Codable {
+    @DocumentID var id: String?
     var name: String
     var startTime: Date
     var endTime: Date?
     var description: String
 }
 
-enum EventLoadingError: Error {
-    case Non200Response
-}
-
-func loadEvents() async throws -> Array<Event> {
-    let url = URL(string: "https://elliottrarden.me/assets/events.json")!
-    let (data, response) = try await URLSession.shared.data(from: url)
+class EventsViewModel: ObservableObject {
+    @Published var events = [Event]()
+    private var db = Firestore.firestore()
     
-    guard let httpResponse = response as? HTTPURLResponse,
-          httpResponse.statusCode == 200 else {
-        throw EventLoadingError.Non200Response
+    func fetchEvents() {
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        
+        db.collection("events")
+            .whereField("createdBy", isEqualTo: uid)
+            .addSnapshotListener { querySnapshot, error in
+                guard let documents = querySnapshot?.documents else {
+                    print("No events found")
+                    return
+                }
+                
+                print("docs")
+                print(documents)
+                let events = documents.map { docSnapshot -> Event in
+                    do {
+                        return try docSnapshot.data(as: Event.self)
+                    } catch {
+                        print(error)
+                    }
+                    return Event(name: "fake", startTime: Date(timeIntervalSince1970: 0), endTime: nil, description: "fake")
+                }
+                print("events after map")
+                print(events)
+                self.events = events
+            }
     }
-    
-    return try JSONDecoder().decode(Array<Event>.self, from: data)
 }
