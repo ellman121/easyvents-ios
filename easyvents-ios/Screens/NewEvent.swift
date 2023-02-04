@@ -12,7 +12,7 @@ struct NewEvent: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     @State var eventName = ""
-    @State var startTime = Date()
+    @State var startTime = Date(timeIntervalSinceNow: 100)
     @State var endTime: Date? = nil
     @State var description = ""
     
@@ -25,9 +25,10 @@ struct NewEvent: View {
                     DatePicker("Start time", selection: $startTime)
                     DatePicker("End time", selection: Binding<Date>(get: {self.endTime ?? Date()}, set: {self.endTime = $0}))
                         .opacity(endTime != nil ? 1 : 0.2)
+                        .foregroundColor(endTime != nil && endTime! < startTime ? .red : .primary)
                 }
-                TextField("Description", text: $description)
-                    .frame(width: .infinity, height: 300, alignment: .center)
+                TextField("Event Description", text: $description, axis: .vertical)
+                    .lineLimit(3...8)
                 Section {
                     Button("Create Event") {
                         eventModel.create(Event: Event(
@@ -36,14 +37,18 @@ struct NewEvent: View {
                             endTime: endTime,
                             description: description
                         )) { error in
-                            if (error == nil) {
-                                self.presentationMode.wrappedValue.dismiss()
+                            if (error != nil) {
+                                print("Erorr uploading event")
                                 return
                             }
-                            
-                            print("Erorr uploading event")
+                            self.presentationMode.wrappedValue.dismiss()
                         }
                     }
+                    .disabled(
+                        eventName == "" ||
+                        startTime < Date() ||
+                        description == "" ||
+                        (endTime != nil && endTime! < startTime))
                 }
                 
             }
