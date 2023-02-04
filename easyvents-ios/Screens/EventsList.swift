@@ -15,7 +15,8 @@ let events = [
 ]
 
 struct EventsList: View {
-    @ObservedObject var eventModel = EventsViewModel()
+    @ObservedObject var eventModel = EventViewModel()
+    @State var showCreateModal = false
     
     var body: some View {
         NavigationView {
@@ -27,20 +28,21 @@ struct EventsList: View {
                 }
             }
             .navigationTitle("Events")
+            .sheet(isPresented: $showCreateModal) {
+                NewEvent()
+            }
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button("Log Out") {
-                        do {
-                            try Auth.auth().signOut()
-                        } catch {
-                            
-                        }
+                        // Yeah, we can just crash if it fails, not going
+                        // to worry about catching this one TBH
+                        try! Auth.auth().signOut()
                     }
                 }
 
                 ToolbarItem(placement: .primaryAction) {
                     Button("New Event") {
-                        print("hello")
+                        self.showCreateModal = true
                     }
                 }
             }
