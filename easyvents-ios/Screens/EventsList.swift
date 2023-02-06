@@ -33,7 +33,7 @@ struct EventsList: View {
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
-                    Button("Log Out") {
+                    Button("Log out") {
                         // Yeah, we can just crash if it fails, not going
                         // to worry about catching this one TBH
                         try! Auth.auth().signOut()
@@ -41,7 +41,7 @@ struct EventsList: View {
                 }
 
                 ToolbarItem(placement: .primaryAction) {
-                    Button("New Event") {
+                    Button("New event") {
                         self.showCreateModal = true
                     }
                 }

@@ -46,13 +46,13 @@ struct NewEvent: View {
                     }
                     .disabled(
                         eventName == "" ||
-                        startTime < Date() ||
+                        startTime < Date(timeIntervalSinceNow: 0) ||
                         description == "" ||
                         (endTime != nil && endTime! < startTime))
                 }
                 
             }
-            .navigationTitle("Create a new event")
+            .navigationTitle("New event")
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button("Cancel", role: .cancel) {
