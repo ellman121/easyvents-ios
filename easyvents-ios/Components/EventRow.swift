@@ -29,7 +29,7 @@ struct EventRow: View {
 
 struct EventRow_Previews: PreviewProvider {
     static var previews: some View {
-        EventRow(event: Event(id: "Event ID", name: "Event Name", startTime: Date(timeIntervalSince1970: 123456789), description: "Some event description"))
+        EventRow(event: Event(id: "Event ID", name: "Event Name",  description: "Some event description", startTime: Date(timeIntervalSince1970: 123456789)))
             .previewLayout(.fixed(width: 300, height: 70))
     }
 }

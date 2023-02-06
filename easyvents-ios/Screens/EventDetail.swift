@@ -17,6 +17,6 @@ struct EventDetail: View {
 
 struct EventDetail_Previews: PreviewProvider {
     static var previews: some View {
-        EventDetail(event: Event(id: "id123", name: "Preview Event", startTime: Date(timeIntervalSinceNow: 10000), description: "Some event description.  The event will take place on a certain day at a certain time.  The people who are invited are X, Y, and Z"))
+        EventDetail(event: Event(id: "id123", name: "Preview Event", description: "Some event description.  The event will take place on a certain day at a certain time.  The people who are invited are X, Y, and Z", startTime: Date(timeIntervalSinceNow: 10000)))
     }
 }

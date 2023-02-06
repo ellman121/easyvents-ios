@@ -13,10 +13,11 @@ import FirebaseFirestoreSwift
 struct Event: Identifiable, Codable {
     @DocumentID var id: String?
     var name: String
+    var description: String
     var startTime: Date
     var endTime: Date?
-    var description: String
     var createdBy: String?
+    var location: String?
 }
 
 class EventViewModel: ObservableObject {
@@ -46,7 +47,7 @@ class EventViewModel: ObservableObject {
                         print("ERROR: Couldn't parse doc snapshot into Event")
                         print(error)
                     }
-                    return Event(name: "Fake Event", startTime: Date(timeIntervalSince1970: 0), description: "Error parsing event")
+                    return Event(name: "Fake Event", description: "Error parsing event", startTime: Date(timeIntervalSince1970: 0))
                 }
                 self.loading = false
                 self.events = events
