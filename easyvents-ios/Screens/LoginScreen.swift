@@ -26,25 +26,9 @@ func signInToFirebaseGoogle(userResult: GIDSignInResult?, error: Error?) {
     Auth.auth().signIn(with: credential)
 }
 
-func signInToFirebaseApple(authResult: Result<ASAuthorization, Error>) {
-    switch authResult {
-    case .success(let authSuccess):
-        Auth.auth().signIn(with: authSuccess.credential as! AuthCredential)
-    default:
-        return
-    }
-}
-
 struct LoginScreen: View {
     var body: some View {
         VStack {
-            SignInWithAppleButton { authRequest in
-                print("hello")
-            } onCompletion: { authResult in
-                signInToFirebaseApple(authResult: authResult)
-            }
-            .frame(height: 40)
-            
             GoogleSignInButton {
                 guard let rvc = UIApplication.shared.keyWindow?.rootViewController,
                       let clientID = FirebaseApp.app()?.options.clientID else { return }
