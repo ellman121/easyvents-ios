@@ -17,7 +17,12 @@ struct Event: Identifiable, Codable {
     var startTime: Date
     var endTime: Date?
     var createdBy: String?
-    var location: String?
+    var location: EventLocation?
+}
+
+struct EventLocation: Codable {
+    var name: String
+    var geoPoint: GeoPoint
 }
 
 class EventViewModel: ObservableObject {

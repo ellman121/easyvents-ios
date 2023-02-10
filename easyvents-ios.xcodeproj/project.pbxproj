@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D5A4A0E9299696E200E0AFAB /* LocationSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A4A0E8299696E200E0AFAB /* LocationSearch.swift */; };
+		D5A4A0F12996A14100E0AFAB /* SwiftLocation in Frameworks */ = {isa = PBXBuildFile; productRef = D5A4A0F02996A14100E0AFAB /* SwiftLocation */; };
 		D5C292C8297EBE6400CC22C8 /* easyvents_iosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C292C7297EBE6400CC22C8 /* easyvents_iosApp.swift */; };
 		D5C292CC297EBE6700CC22C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5C292CB297EBE6700CC22C8 /* Assets.xcassets */; };
 		D5C292CF297EBE6700CC22C8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5C292CE297EBE6700CC22C8 /* Preview Assets.xcassets */; };
@@ -46,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D5A4A0E8299696E200E0AFAB /* LocationSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearch.swift; sourceTree = "<group>"; };
 		D5C292C4297EBE6400CC22C8 /* easyvents-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "easyvents-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5C292C7297EBE6400CC22C8 /* easyvents_iosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = easyvents_iosApp.swift; sourceTree = "<group>"; };
 		D5C292CB297EBE6700CC22C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -75,6 +78,7 @@
 				D5C29315298D848F00CC22C8 /* FirebaseAnalytics in Frameworks */,
 				D5C29319298D848F00CC22C8 /* FirebaseFirestore in Frameworks */,
 				D5C29317298D848F00CC22C8 /* FirebaseAuth in Frameworks */,
+				D5A4A0F12996A14100E0AFAB /* SwiftLocation in Frameworks */,
 				D5C2931B298D848F00CC22C8 /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -169,6 +173,7 @@
 			children = (
 				D5C292FB29816D4700CC22C8 /* EventsList.swift */,
 				D5C2931C298EBD5900CC22C8 /* NewEvent.swift */,
+				D5A4A0E8299696E200E0AFAB /* LocationSearch.swift */,
 				D5C292FD29816F9A00CC22C8 /* EventDetail.swift */,
 				D5C29309298AEE3A00CC22C8 /* LoginScreen.swift */,
 			);
@@ -214,6 +219,7 @@
 				D5C29316298D848F00CC22C8 /* FirebaseAuth */,
 				D5C29318298D848F00CC22C8 /* FirebaseFirestore */,
 				D5C2931A298D848F00CC22C8 /* FirebaseFirestoreSwift */,
+				D5A4A0F02996A14100E0AFAB /* SwiftLocation */,
 			);
 			productName = "easyvents-ios";
 			productReference = D5C292C4297EBE6400CC22C8 /* easyvents-ios.app */;
@@ -290,6 +296,7 @@
 			packageReferences = (
 				D5C2930B298AEFFB00CC22C8 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 				D5C29313298D848F00CC22C8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				D5A4A0EF2996A14100E0AFAB /* XCRemoteSwiftPackageReference "SwiftLocation" */,
 			);
 			productRefGroup = D5C292C5297EBE6400CC22C8 /* Products */;
 			projectDirPath = "";
@@ -340,6 +347,7 @@
 				D5C292C8297EBE6400CC22C8 /* easyvents_iosApp.swift in Sources */,
 				D5C292FE29816F9A00CC22C8 /* EventDetail.swift in Sources */,
 				D5C292FA2981682F00CC22C8 /* EventRow.swift in Sources */,
+				D5A4A0E9299696E200E0AFAB /* LocationSearch.swift in Sources */,
 				D5C2930A298AEE3A00CC22C8 /* LoginScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -663,6 +671,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		D5A4A0EF2996A14100E0AFAB /* XCRemoteSwiftPackageReference "SwiftLocation" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/malcommac/SwiftLocation.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		D5C2930B298AEFFB00CC22C8 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
@@ -682,6 +698,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		D5A4A0F02996A14100E0AFAB /* SwiftLocation */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D5A4A0EF2996A14100E0AFAB /* XCRemoteSwiftPackageReference "SwiftLocation" */;
+			productName = SwiftLocation;
+		};
 		D5C2930C298AEFFB00CC22C8 /* GoogleSignIn */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = D5C2930B298AEFFB00CC22C8 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;

@@ -7,6 +7,8 @@
 
 import SwiftUI
 import MapKit
+import FirebaseFirestore
+import SwiftLocation
 
 struct NewEvent: View {
     @ObservedObject var eventModel = EventViewModel()
@@ -16,10 +18,10 @@ struct NewEvent: View {
     @State var startTime = Date(timeIntervalSinceNow: 100)
     @State var endTime: Date? = nil
     @State var description = ""
-    @State var location = ""
+    @State var location: EventLocation? = nil
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack {
                 Form {
                     Section {
@@ -28,7 +30,12 @@ struct NewEvent: View {
                         DatePicker("End time", selection: Binding<Date>(get: {self.endTime ?? Date()}, set: {self.endTime = $0}))
                             .opacity(endTime != nil ? 1 : 0.2)
                             .foregroundColor(endTime != nil && endTime! < startTime ? .red : .primary)
-                        TextField("Location", text: $location)
+                        NavigationLink {
+                            LocationSearch(selectedLocation: Binding<EventLocation>(get: {self.location ?? EventLocation(name: "", geoPoint: GeoPoint(latitude: 0, longitude: 0))}, set: {self.location = $0}))
+                        } label: {
+                            Label(location?.name ?? "Select a location", systemImage: "location")
+                        }
+                        
                     }
                     TextField("Event Description", text: $description, axis: .vertical)
                         .lineLimit(1...8)
@@ -40,7 +47,7 @@ struct NewEvent: View {
                         description: description,
                         startTime: startTime,
                         endTime: endTime,
-                        location: location == "" ? nil : location
+                        location: location
                     )) { error in
                         if (error != nil) {
                             print("Erorr uploading event")
@@ -55,9 +62,6 @@ struct NewEvent: View {
                     startTime < Date(timeIntervalSinceNow: 0) ||
                     description == "" ||
                     (endTime != nil && endTime! < startTime))
-            }
-            .onTapGesture {
-                UIApplication.shared.endEditing()
             }
             .navigationTitle("New event")
             .toolbar {
