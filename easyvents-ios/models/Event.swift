@@ -25,6 +25,8 @@ struct EventLocation: Codable {
     var geoPoint: GeoPoint
 }
 
+let eventCollection = "events"
+
 class EventViewModel: ObservableObject {
     @Published var events = [Event]()
     @Published var loading = false
@@ -34,7 +36,7 @@ class EventViewModel: ObservableObject {
         self.loading = true
         guard let uid = Auth.auth().currentUser?.uid else { return }
         
-        db.collection("events")
+        db.collection(eventCollection)
             .whereField("createdBy", isEqualTo: uid)
             .order(by: "startTime")
             .addSnapshotListener { querySnapshot, error in
@@ -49,11 +51,11 @@ class EventViewModel: ObservableObject {
                     do {
                         return try docSnapshot.data(as: Event.self)
                     } catch {
-                        print("ERROR: Couldn't parse doc snapshot into Event")
+                        print("ERROR: Failed to convert docSnapshot to Event")
                         print(error)
                     }
-                    return Event(name: "Fake Event", description: "Error parsing event", startTime: Date(timeIntervalSince1970: 0))
-                }
+                    return Event(id: "", name: "", description: "", startTime: Date(timeIntervalSince1970: 0))
+                }.filter { $0.id != "" } // Filter out failed events
                 self.loading = false
                 self.events = events
             }
@@ -67,9 +69,11 @@ class EventViewModel: ObservableObject {
         uploadEvent.createdBy = uid
         
         do {
-            try db.collection("events").document().setData(from: uploadEvent)
+            try db.collection(eventCollection).document().setData(from: uploadEvent)
+            self.loading = false
             onComplete(nil)
         } catch {
+            self.loading = false
             onComplete(error)
         }
     }
