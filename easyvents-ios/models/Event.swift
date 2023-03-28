@@ -18,6 +18,7 @@ struct Event: Identifiable, Codable {
     var endTime: Date?
     var createdBy: String?
     var location: EventLocation?
+    var invitees: [String]?
 }
 
 struct EventLocation: Codable {
@@ -26,36 +27,33 @@ struct EventLocation: Codable {
 }
 
 let eventCollection = "events"
+let negative24H = TimeInterval(exactly: -24 * 60 * 60)!
 
 class EventViewModel: ObservableObject {
+    private var db = Firestore.firestore()
+    
     @Published var events = [Event]()
     @Published var loading = false
-    private var db = Firestore.firestore()
     
     func fetchEvents() {
         self.loading = true
         guard let uid = Auth.auth().currentUser?.uid else { return }
         
         db.collection(eventCollection)
-            .whereField("createdBy", isEqualTo: uid)
+            .whereField("invitees", arrayContains: uid)
+            .whereField("startTime", isGreaterThanOrEqualTo: Date(timeIntervalSinceNow: negative24H))
             .order(by: "startTime")
             .addSnapshotListener { querySnapshot, error in
                 self.loading = true
                 guard let documents = querySnapshot?.documents else {
-                    print("ERROR: no events found for user")
                     self.loading = false
                     return
                 }
                 
-                let events = documents.map { docSnapshot -> Event in
-                    do {
-                        return try docSnapshot.data(as: Event.self)
-                    } catch {
-                        print("ERROR: Failed to convert docSnapshot to Event")
-                        print(error)
-                    }
-                    return Event(id: "", name: "", description: "", startTime: Date(timeIntervalSince1970: 0))
-                }.filter { $0.id != "" } // Filter out failed events
+                let events = documents
+                    .map { $0.toEvent() }
+                    .filter { $0.id != "" }
+                
                 self.loading = false
                 self.events = events
             }
@@ -67,6 +65,7 @@ class EventViewModel: ObservableObject {
         
         var uploadEvent = event
         uploadEvent.createdBy = uid
+        uploadEvent.invitees = [uid]
         
         do {
             try db.collection(eventCollection).document().setData(from: uploadEvent)
@@ -76,5 +75,17 @@ class EventViewModel: ObservableObject {
             self.loading = false
             onComplete(error)
         }
+    }
+}
+
+extension QueryDocumentSnapshot {
+    func toEvent() -> Event {
+        do {
+            return try self.data(as: Event.self)
+        } catch {
+            print("ERROR: Failed to convert docSnapshot to Event")
+            print(error)
+        }
+        return Event(id: "", name: "", description: "", startTime: Date(timeIntervalSince1970: 0))
     }
 }

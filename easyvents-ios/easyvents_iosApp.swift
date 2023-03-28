@@ -43,29 +43,28 @@ struct easyvents_iosApp: App {
     
     var body: some Scene {
         WindowGroup {
-            NewEvent()
-//            if (isLoggedIn) {
-//                EventsList()
-//                    .onAppear {
-//                        Auth.auth().addStateDidChangeListener { auth, _ in
-//                            if auth.currentUser == nil {
-//                                isLoggedIn = false
-//                            }
-//                        }
-//                    }
-//            } else {
-//                LoginScreen()
-//                    .onOpenURL { url in
-//                        GIDSignIn.sharedInstance.handle(url)
-//                    }
-//                    .onAppear {
-//                        Auth.auth().addStateDidChangeListener { auth, _ in
-//                            if auth.currentUser != nil {
-//                                isLoggedIn = true
-//                            }
-//                        }
-//                    }
-//            }
+            if (isLoggedIn) {
+                EventsList()
+                    .onAppear {
+                        Auth.auth().addStateDidChangeListener { auth, _ in
+                            if auth.currentUser == nil {
+                                isLoggedIn = false
+                            }
+                        }
+                    }
+            } else {
+                LoginScreen()
+                    .onOpenURL { url in
+                        GIDSignIn.sharedInstance.handle(url)
+                    }
+                    .onAppear {
+                        Auth.auth().addStateDidChangeListener { auth, _ in
+                            if auth.currentUser != nil {
+                                isLoggedIn = true
+                            }
+                        }
+                    }
+            }
         }
     }
 }
